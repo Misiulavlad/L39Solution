@@ -1,18 +1,18 @@
-#include <iostream>
-#include <string>
-using namespace std;
-void init_random(int* arr, int size) {
-	srand(time(0));
-	for (int i = 0; i < size; i++) {
-		arr[i] = rand() % 10 + 1;
+#include "util.h" 
+string convert(int* array, int size) {
+
+	string s = "";
+	for (int i = 0; i < size; i++)
+	{
+		s += to_string(array[i]) + " ";
 	}
+
+	return s;
 }
 
-string convert(int* arr, int size) {
-	string s = "";
-	init_random(arr, size);
-	for (int i = 0; i < size; i++) {
-		s += to_string(arr[i])+" ";
+void init(int* array, int size, int a, int b) {
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = rand() % (b - a + 1) + a;
 	}
-	return s;
 }

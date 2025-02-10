@@ -1,13 +1,25 @@
-#include <iostream>
+#include     <iostream> 				
+#include "util.h"
+#include <ctime>
+#include "sort.h"
 using namespace std;
-void init_random(int* arr, int size);
-string convert(int* arr, int size);
-#define SIZE 10
+
+#define SIZE 20
+
 int main() {
-	                                                                                                            
-	int arr[SIZE];
-	init_random(arr, SIZE);
-	cout << convert(arr, SIZE);
+
+	srand(time(NULL));
+
+	int array[SIZE];
+
+	init(array, SIZE, 0, 100);
+
+	cout << "array before bubble sort: " << convert(array, SIZE) << endl;
+	bubble_sort(array, SIZE);
+
+	cout << "array after bubble sort: " << convert(array, SIZE) << endl;
+
+
 
 	return 0;
-} 
+}
